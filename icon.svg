@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1C1008"/>
+      <stop offset="100%" stop-color="#0D0F12"/>
+    </linearGradient>
+    <linearGradient id="flame" x1="20%" y1="100%" x2="80%" y2="0%">
+      <stop offset="0%" stop-color="#EA580C"/>
+      <stop offset="60%" stop-color="#F97316"/>
+      <stop offset="100%" stop-color="#FCD34D"/>
+    </linearGradient>
+    <linearGradient id="inner" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FCD34D"/>
+      <stop offset="100%" stop-color="#FEFCE8"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    <filter id="softglow">
+      <feGaussianBlur stdDeviation="18" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Background rounded square -->
+  <rect width="512" height="512" rx="96" fill="url(#bg)"/>
+
+  <!-- Ambient glow behind flame -->
+  <ellipse cx="256" cy="290" rx="130" ry="110" fill="#F97316" opacity="0.12" filter="url(#softglow)"/>
+
+  <!-- Outer flame -->
+  <path d="M256 82
+    C256 82 215 135 198 182
+    C180 232 192 268 210 288
+    C208 258 220 238 236 224
+    C228 256 232 282 248 300
+    C248 300 222 290 214 260
+    C206 300 218 338 248 358
+    C234 344 192 316 188 272
+    C182 220 210 162 256 82Z
+    M256 82
+    C256 82 297 135 314 182
+    C332 232 320 268 302 288
+    C304 258 292 238 276 224
+    C284 256 280 282 264 300
+    C264 300 290 290 298 260
+    C306 300 294 338 264 358
+    C278 344 320 316 324 272
+    C330 220 302 162 256 82Z"
+    fill="url(#flame)" opacity="0.95"/>
+
+  <!-- Middle flame layer -->
+  <path d="M256 148
+    C256 148 228 188 220 222
+    C213 252 224 274 238 288
+    C236 268 244 252 254 242
+    C250 262 252 278 256 292
+    C260 278 262 262 258 242
+    C268 252 276 268 274 288
+    C288 274 299 252 292 222
+    C284 188 256 148 256 148Z"
+    fill="url(#inner)" opacity="0.85"/>
+
+  <!-- Lightning bolt (white, centered) -->
+  <path d="M272 200 L244 268 L264 268 L232 345 L296 252 L272 252 L308 200Z"
+    fill="white" opacity="0.22"/>
+
+  <!-- Bottom water drop accent -->
+  <ellipse cx="256" cy="390" rx="28" ry="36" fill="#38BDF8" opacity="0.75"/>
+  <ellipse cx="256" cy="372" rx="14" ry="10" fill="#BAE6FD" opacity="0.6"/>
+
+  <!-- Subtle ring border -->
+  <rect width="512" height="512" rx="96" fill="none" stroke="#F97316" stroke-width="6" opacity="0.15"/>
+</svg>
